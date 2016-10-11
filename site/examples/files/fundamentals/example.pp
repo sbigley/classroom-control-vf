@@ -10,8 +10,3 @@ package { 'cowsay':
   ensure   => present,
   provider => gem,
 }
-
-package { 'fortune':
-  ensure => present,
-  provider = gem,
-}
