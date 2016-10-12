@@ -54,7 +54,7 @@ node default {
   exec { 'createmotd':
     path => ['/usr/bin', '/usr/sbin'],
     creates => '/etc/motd',
-    onlyif => 'rm /etc/motd',
+  ##  onlyif => 'rm /etc/motd',
   }
 
 }
