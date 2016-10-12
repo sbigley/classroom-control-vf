@@ -52,7 +52,7 @@ node default {
   ##  content => "Make sure your socks are clean before you speak.\n",
   ##}
   exec { 'createmotd':
-    path => ['/usr/bin', '/usr/sbin'],
+    path => ['/usr/bin', '/usr/sbin', '/usr/local/bin',],
     creates => '/etc/motd',
     command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
   ##  onlyif => 'rm /etc/motd',
