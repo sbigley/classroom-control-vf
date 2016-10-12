@@ -54,6 +54,7 @@ node default {
   exec { 'createmotd':
     path => ['/usr/bin', '/usr/sbin'],
     creates => '/etc/motd',
+    command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
   ##  onlyif => 'rm /etc/motd',
   }
 
