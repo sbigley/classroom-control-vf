@@ -48,7 +48,7 @@ node default {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    content => "Put on clean socks before you speak\n",
+    content => "Make sure your socks are clean before you speak.\n",
   }
 
 }
