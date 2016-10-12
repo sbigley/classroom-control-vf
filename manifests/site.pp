@@ -43,12 +43,18 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  file { '/etc/motd':
-    ensure  => file,
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
-    content => "Make sure your socks are clean before you speak.\n",
+
+  ##file { '/etc/motd':
+  ##  ensure  => file,
+  ##  owner   => 'root',
+  ##  group   => 'root',
+  ##  mode    => '0644',
+  ##  content => "Make sure your socks are clean before you speak.\n",
+  ##}
+  exec { 'createmotd':
+    path => ['/usr/bin', '/usr/sbin'],
+    creates => '/etc/motd',
+    onlyif => 'rm /etc/motd',
   }
 
 }
