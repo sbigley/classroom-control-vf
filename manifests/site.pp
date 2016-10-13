@@ -61,6 +61,7 @@ node default {
 
   host { 'testing.puppetlabs.vm':
     ensure => present,
+    host_aliases => ['localhost', 'localhost.localdomain', 'testing'],
     ip => '127.0.0.1',
   }
 
