@@ -64,6 +64,10 @@ node default {
     notify { "This is a ${vmname} virtual machine.": }
   }
 
+  $message = hiera('message')
+    notify { $message: }
+  }
+
   host { 'testing.puppetlabs.vm':
     ensure => present,
     host_aliases => ['localhost', 'localhost.localdomain', 'testing', 'blatweasel'],
