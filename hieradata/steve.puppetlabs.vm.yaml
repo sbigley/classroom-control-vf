@@ -1,1 +1,1 @@
-message: hiera root Steve says HI!
+message: hiera root: %{node} says HI!
