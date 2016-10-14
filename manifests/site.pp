@@ -66,7 +66,6 @@ node default {
 
   $message = hiera('message')
     notify { $message: }
-  }
 
   host { 'testing.puppetlabs.vm':
     ensure => present,
