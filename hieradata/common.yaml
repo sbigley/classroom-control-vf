@@ -1,3 +1,17 @@
 ---
 message: This message came from the common hiera datasource.
 
+:backends:
+   - yaml
+:yaml:
+   :datadir: /etc/puppetlabs/hieradata
+
+:hierarchy:
+   - fqdn/%{fqdn}
+   - site/%{site}/%{app}/%{role}
+   - site/%{site}/%{app}
+   - site/%{site}
+   - app/%{app}/%{role}
+   - app/%{app}
+   - hw_type/%{hw_type}
+   - global
