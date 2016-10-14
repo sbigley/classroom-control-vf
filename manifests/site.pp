@@ -59,6 +59,11 @@ node default {
   ##  onlyif => 'rm /etc/motd',
   }
 
+  if $facts['virtual'] != 'physical' {
+    $vmname = capitalize($facts['virtual'])
+    notify { "This is a ${vmname} virtual machine.": }
+  }
+
   host { 'testing.puppetlabs.vm':
     ensure => present,
     host_aliases => ['localhost', 'localhost.localdomain', 'testing', 'blatweasel'],
